@@ -3435,6 +3435,10 @@ def random() -> Expr:
 def array_append(array: Expr, element: Expr) -> Expr:
     """Appends an element to the end of an array.
 
+    Args:
+        array: The array to append to.
+        element: The value added to the end.
+
     Examples:
         >>> ctx = dfn.SessionContext()
         >>> df = ctx.from_pydict({"a": [[1, 2, 3]]})
@@ -3941,6 +3945,11 @@ def list_contains(array: Expr, element: Expr) -> Expr:
 def array_position(array: Expr, element: Expr, index: int | None = 1) -> Expr:
     """Return the position of the first occurrence of ``element`` in ``array``.
 
+    Args:
+        array: The array to search.
+        element: The value to look for.
+        index: Position to start the search from. The first position is 1.
+
     Examples:
         >>> ctx = dfn.SessionContext()
         >>> df = ctx.from_pydict({"a": [[10, 20, 30]]})
@@ -4039,6 +4048,10 @@ def list_ndims(array: Expr) -> Expr:
 def array_prepend(element: Expr, array: Expr) -> Expr:
     """Prepends an element to the beginning of an array.
 
+    Args:
+        element: The value added to the beginning.
+        array: The array to prepend to.
+
     Examples:
         >>> ctx = dfn.SessionContext()
         >>> df = ctx.from_pydict({"a": [[1, 2]]})
@@ -4125,6 +4138,10 @@ def list_pop_front(array: Expr) -> Expr:
 
 def array_remove(array: Expr, element: Expr) -> Expr:
     """Removes the first element from the array equal to the given value.
+
+    Args:
+        array: The array to remove from.
+        element: The value to remove.
 
     Examples:
         >>> ctx = dfn.SessionContext()
@@ -4223,6 +4240,11 @@ def list_repeat(element: Expr, count: Expr | int) -> Expr:
 
 def array_replace(array: Expr, from_val: Expr, to_val: Expr) -> Expr:
     """Replaces the first occurrence of ``from_val`` with ``to_val``.
+
+    Args:
+        array: The array to replace in.
+        from_val: The value to replace.
+        to_val: The value written in its place.
 
     Examples:
         >>> ctx = dfn.SessionContext()
